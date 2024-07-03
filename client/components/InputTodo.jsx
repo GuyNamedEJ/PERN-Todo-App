@@ -3,7 +3,7 @@ import { useState } from "react";
 function InputTodo() {
   const [description, setDescription] = useState("");
 
-  const api = 'https://pern-todo-app-y75k.onrender.com'
+  const api = 'https://pern-todo-app-y75k.onrender.com/todos'
 
 
   const onSubmitForm = async (e) => {
@@ -12,7 +12,7 @@ function InputTodo() {
     try {
       const body = { description };
 
-      const response = await fetch(`${api}/todos`, {
+      const response = await fetch(`${api}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

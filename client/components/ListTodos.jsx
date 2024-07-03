@@ -3,12 +3,12 @@ import EditTodos from "./EditTodos";
 
 function ListTodos() {
   const [todos, setTodos] = useState([]);
-  const api = 'https://pern-todo-app-y75k.onrender.com'
+  const api = 'https://pern-todo-app-y75k.onrender.com/todos'
 
 
   const getTodos = async () => {
     try {
-      const response = await fetch(`${api}/todos`);
+      const response = await fetch(`${api}`);
       const data = await response.json();
 
       setTodos(data);
@@ -19,7 +19,7 @@ function ListTodos() {
 
   const deleteTodo = async (id) => {
     try {
-      const deleteTodo = await fetch(`${api}/todos/${id}`,
+      const deleteTodo = await fetch(`${api}/${id}`,
         {
           method: "DELETE"
         }

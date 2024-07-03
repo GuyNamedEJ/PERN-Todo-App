@@ -9,6 +9,7 @@ console.log(process.env.DB_NAME)
 app.use(cors());
 app.use(express.json());
 
+
 // Routes //
 
 // create todo

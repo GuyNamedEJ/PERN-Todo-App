@@ -3,11 +3,14 @@ import { useState } from "react";
 function EditTodos({ todo }) {
   const [description, setDesc] = useState(todo.description);
 
+  const api = 'https://pern-todo-app-y75k.onrender.com'
+
+
   const updateDesc = async (e) => {
     e.preventDefault();
     try {
         const body = { description }
-        const response = await fetch(`http://localhost:5000/todos/${todo.todo_id}`,{
+        const response = await fetch(`${api}/${todo.todo_id}`,{
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(body)
